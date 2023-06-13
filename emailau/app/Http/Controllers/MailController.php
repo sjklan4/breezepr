@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function mail() {
+    public function rgemail() {
         return view('EmailRegist');
     }
 
-    public function mailpost(Request $req) {
+    public function rgmailpost(Request $req) {
         // return var_dump($req->mailAddress);
         Mail::to($req->mailAddress)->send(new OrderShipped($req->mailAddress));
 
-        return '전송 완료';
+        return '메일을 확인해 주세요';
         // return redirect()->back()->with('success', '메일 전송 완료');
     }
 }

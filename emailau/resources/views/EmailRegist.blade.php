@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{route('mails.mail.post')}}" method="POST">
+    <form action="{{route('mails.userchk')}}" method="POST">
         @csrf
         <label for="mailAddress">email : </label>
         <input type="text" id="mailAddress" name="mailAddress">
-        <button type="submit">submit</button>
+        <br>
+        <button type="submit">인증요청</button>
     </form>
 
 

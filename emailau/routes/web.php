@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mails/mail', [MailController::class, 'mail'])->name('mails.mail');
-Route::post('/mails/mailpost', [MailController::class, 'mailpost'])->name('mails.mail.post');
+Route::get('/mails/rgemail', [MailController::class, 'rgemail'])->name('mails.rgmail');
+Route::post('/mails/rgmailpost', [MailController::class, 'rgmailpost'])->name('mails.userchk');
+
+Route::get('/users/chkuser', [UserController::class, 'chkuser'])->name('users.chking');

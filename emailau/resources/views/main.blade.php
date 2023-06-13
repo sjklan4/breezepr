@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>이메일 인증</h1>
-    <div><a href="{{ route('users.chking')}}">인증</a></div>
+    <h1>환영합니다.~~~~~</h1>
 </body>
 </html>

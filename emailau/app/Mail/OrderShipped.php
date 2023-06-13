@@ -8,21 +8,22 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\User;
 
 class OrderShipped extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $mailAddress;
+    protected $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($mailAddress)
+    public function __construct($user)
     {
-        $this->mailAddress = $mailAddress;
+        $this->user = $user;
     }
     /**
      * Build the message.
@@ -31,8 +32,19 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->from('emaidl@gmail.com', '테스트')
-        ->view('email.emailre');
+        return $this->view('email.emailre')
+   
+        
+            ->from('emaidl@gmail.com', '테스트')
+        ;
+        
+        
 
     }
 }
+// ->with([
+//     'name' => $this->user->name,
+//     'email' => $this->user->email,
+//     'password' => $this->user->password,
+
+// ])
